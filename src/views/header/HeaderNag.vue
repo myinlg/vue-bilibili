@@ -16,19 +16,18 @@
      <el-row class="menu-items">
        <MenuItems></MenuItems>
      </el-row>
-     <el-row class="main-content">
-
-     </el-row>
   </div>
 </template>
 <script>
 import TextColorful from '@/views/header/TextColorful'
 import MenuItems from '@/views/header/MenuItems'
+import Content from '@/views/content/Content'
 export default {
   name: 'Header',
   components: {
     TextColorful,
-    MenuItems
+    MenuItems,
+    Content
   },
   data () {
     return {
