@@ -1,21 +1,21 @@
 <template>
-  <div class="Header">
-     <el-row class="bg-animate">
-        <el-col class="title" :span="6">
-          <TextColorful></TextColorful>
-        </el-col>
-        <el-col class="input" :span="18">
-          <el-input
-              size="small"
-              placeholder="请输入内容"
-              suffix-icon="el-icon-search"
-              v-model="input21">
-          </el-input>
-        </el-col>
-     </el-row>
-     <el-row class="menu-items">
-       <MenuItems></MenuItems>
-     </el-row>
+  <div class="header" :class="[showHead ? 'slide-down':'slide-up']">
+    <el-row class="bg-animate">
+      <el-col class="title" :span="6">
+        <TextColorful></TextColorful>
+      </el-col>
+      <el-col class="input" :span="18">
+        <el-input
+            size="small"
+            :placeholder="showHead"
+            suffix-icon="el-icon-search"
+            >
+        </el-input>
+      </el-col>
+    </el-row>
+    <el-row class="menu-items">
+      <MenuItems></MenuItems>
+    </el-row>
   </div>
 </template>
 <script>
@@ -29,6 +29,12 @@ export default {
     MenuItems,
     Content
   },
+  props: {
+    showHead: {
+      type: Boolean,
+      default: true
+    }
+  },
   data () {
     return {
     }
@@ -36,32 +42,47 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.bg-animate {
-  height: 150px;
-  width: 100%;
-  background-color: #dddddd;
-  .title {
-    height: 100%;
-  }
-  .input {
-    height: 100%;
-    .el-input {
-      position: absolute;
-      width: 300px;
-      right: 200px;
-      bottom: 20px;
-      /deep/ .el-input__suffix {
-        color: #00aed6;
-        font-size: 18px;
+.header {
+  position: absolute;
+  top: 0;
+  .bg-animate {
+    height: 150px;
+    width: 100%;
+    background-color: #dddddd;
+    .title {
+      height: 100%;
+    }
+    .input {
+      height: 100%;
+      .el-input {
+        position: absolute;
+        width: 300px;
+        right: 200px;
+        bottom: 20px;
+        /deep/ .el-input__suffix {
+          color: #00aed6;
+          font-size: 18px;
+        }
       }
     }
   }
+  .menu-items {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+  }
 }
-.menu-items {
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: aqua;
+/*平滑效果*/
+@animate-style: top 0.5s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+.slide-up {
+  -webkit-transition: @animate-style;
+  transition: @animate-style;
+  top: -150px !important;
+}
+.slide-down {
+  -webkit-transition: @animate-style;
+  transition: @animate-style;
 }
 </style>

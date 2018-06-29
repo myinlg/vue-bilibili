@@ -1,36 +1,51 @@
-<script>
-import HeaderNag  from '@/views/header/HeaderNag'
-export default {
-  name: 'Index',
-  components: {
-    HeaderNag, //导航
-  }
-};
-</script>
 <template>
   <div>
     <Header>
-      <HeaderNag></HeaderNag>
+      <!-- <transition name="slide-fade"> -->
+        <!-- <p v-if="show">hello</p> -->
+        <HeaderNag :showHead="showHead"></HeaderNag>
+      <!-- </transition> -->
     </Header>
     <Content>
       <router-view class="router-view"></router-view>
     </Content>
   </div>
 </template>
-<style lang="less" scoped>
-.k-layout-header {
-  // height: 46px;
-  // line-height: 46px;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  background: #e9eef4;
-}
-
-.k-layout-content {
-  height: calc(~'100vh - 60px');
-  .router-view {
-    height: 100%;
+<script>
+import HeaderNag  from '@/views/header/HeaderNag'
+export default {
+  name: 'Index',
+  components: {
+    HeaderNag , //导航
+  },
+  data () {
+    return {
+      showHead: true
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll (e) {
+      let scrolled = window.scrollY
+      this.showHead = scrolled < 150 ? true : false;
+    }
   }
+};
+</script>
+<style lang="less" scoped>
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+}
+content {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  height: 100%;
 }
 </style>
