@@ -21,13 +21,11 @@
 <script>
 import TextColorful from '@/views/header/TextColorful'
 import MenuItems from '@/views/header/MenuItems'
-import Content from '@/views/content/Content'
 export default {
   name: 'Header',
   components: {
     TextColorful,
-    MenuItems,
-    Content
+    MenuItems
   },
   props: {
     showHead: {
@@ -44,6 +42,8 @@ export default {
 <style lang="less" scoped>
 .header {
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   .bg-animate {
     height: 150px;

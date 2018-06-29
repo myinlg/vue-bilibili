@@ -19,6 +19,6 @@ export default {
 .test {
   margin: 10px;
   height: 200px;
-  background-color: @color;
+  // background-color: @color;
 }
 </style>

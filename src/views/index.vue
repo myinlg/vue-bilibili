@@ -1,10 +1,7 @@
 <template>
   <div>
     <Header>
-      <!-- <transition name="slide-fade"> -->
-        <!-- <p v-if="show">hello</p> -->
-        <HeaderNag :showHead="showHead"></HeaderNag>
-      <!-- </transition> -->
+      <HeaderNag :showHead="showHead"></HeaderNag>
     </Header>
     <Content>
       <router-view class="router-view"></router-view>

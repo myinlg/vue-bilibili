@@ -1,0 +1,4 @@
+.arrow-left {
+  background-image: url(../images/icons.png);
+  background-position: -476px -605px;
+}
