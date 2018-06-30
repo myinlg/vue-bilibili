@@ -8,18 +8,22 @@
         <ImgModule></ImgModule>
       </div>
     </el-row>
-    <el-row class="test" v-for="index in 20" :key="index"></el-row>
+    <el-row class="home-page">
+      <HomePopularize></HomePopularize>
+    </el-row>
   </div>
 </template>
 
 <script>
 import Shuffling from '@/components/Shuffling'
 import ImgModule from '@/components/ImgModule'
+import HomePopularize from './HomePopularize'
 export default {
   name: 'Content',
   components: {
     Shuffling,
-    ImgModule
+    ImgModule,
+    HomePopularize
   },
   data () {
     return {
@@ -33,8 +37,9 @@ export default {
   width: 100%;
   height: 220px;
   display: flex;
+  margin-bottom: 30px;
   .shuffling-panel {
-    width: 420px;
+    width: 440px;
     height: 100%;
     margin-right: 20px;
     border-radius: 5px;

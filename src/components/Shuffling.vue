@@ -18,7 +18,7 @@ export default {
 .shuffling {
   height: 100%;
   width: 100%;
-  background-image: url(~assets/images/content/shuffling1.jpg);
+  background-image: url(/static/images/content/shuffling1.jpg);
   background-size: 100% 100%;
 }
 </style>

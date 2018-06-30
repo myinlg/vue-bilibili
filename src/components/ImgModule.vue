@@ -28,16 +28,15 @@ export default {
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
   flex-wrap: wrap;
-  flex-direction: 'column';
-  align-items: 'center';
   justify-content: space-between;
-  // align-content: stretch;
   .img {
     width: 160px;
     height: 100px;
     background-size: 100% 100%;
     border-radius: 5px;
+    margin-bottom: 20px;
   }
 }
 </style>
