@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Shuffling from '@/components/Shuffling'
+import Shuffling from '@/components/shuffling/Shuffling'
 import ImgModule from '@/components/ImgModule'
 import HomePopularize from './HomePopularize'
 export default {
