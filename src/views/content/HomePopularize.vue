@@ -57,8 +57,8 @@ export default {
       line-height: 40px;
       text-indent: 50px;
       margin: 10px 0;
-      &:before {
-        .icon-popularize; //推广图标
+      // .icon-popularize; //推广图标
+      &:before:extend(.icon-popularize) {
         content: '';
         position: absolute;
         width: 40px;
@@ -112,7 +112,7 @@ export default {
       background-image: url('/static/images/content/lazy-img.jpg');
     }
     > .title:before {
-      .icon-live;
+      .icon-living;
     }
   }
 }
