@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     onScroll (e) {
-      let scrolled = window.scrollY
+      let scrolled = window.pageYOffset||document.documentElement.scrollTop; //兼容IE8
       this.showHead = scrolled < 150
     }
   }
@@ -37,20 +37,25 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+  display: -moz-box; /* Firefox 17- */
+  display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+  display: -moz-flex; /* Firefox 18+ */
+  display: -ms-flexbox; /* IE 10 */
   display: flex;
-  justify-content: center;
   header {
     position: fixed;
     top: 0;
-    z-index: 1;
+    left: 0;
     width: 100%;
     height: auto;
+    z-index: 1;
     background-image: url(~assets/images/head_logo.png);
   }
   content {
-    position: absolute;
-    top: 200px;
-    margin: 0 auto;
+    position: relative;
+    margin: 200px auto 0;
+    height: auto;
   }
 }
 </style>

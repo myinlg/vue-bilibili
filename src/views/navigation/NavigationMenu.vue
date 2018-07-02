@@ -62,7 +62,7 @@ export default {
 .menus-items {
   height: 100%;
   width: 100%;
-  display: flex;
+  display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
   background-color: #fff;
   .menus {
     display: flex;
