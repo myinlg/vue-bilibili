@@ -1,7 +1,7 @@
-import Index from '@/views/Index'
+import Index from '@/views/Home'
 const routers = [{
     path: '/',
-    name: 'Index',
+    name: 'Home',
     component: Index,
     redirect: 'Content',
     children: [{

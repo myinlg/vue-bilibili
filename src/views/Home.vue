@@ -1,7 +1,7 @@
 <template>
   <div class="bilibili">
     <Header>
-      <HeaderNag :showHead="showHead"></HeaderNag>
+      <Navigation :showHead="showHead"></Navigation>
     </Header>
     <Content class="sailor-wrapper">
       <router-view class="router-view"></router-view>
@@ -9,11 +9,11 @@
   </div>
 </template>
 <script>
-import HeaderNag from '@/views/header/HeaderNag'
+import Navigation from '@/views/navigation/Navigation'
 export default {
   name: 'Index',
   components: {
-    HeaderNag // 导航
+    Navigation // 导航
   },
   data () {
     return {

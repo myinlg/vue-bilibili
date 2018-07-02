@@ -3,7 +3,7 @@
     <el-row class="bg-animate">
       <div class="sailor-wrapper">
         <el-col class="title" :span="6">
-          <TextColorful></TextColorful>
+          <NavigationText></NavigationText>
         </el-col>
         <el-input
             size="small"
@@ -14,18 +14,18 @@
       </div>
     </el-row>
     <el-row class="menu-items sailor-wrapper">
-      <MenuItems></MenuItems>
+      <NavigationMenu></NavigationMenu>
     </el-row>
   </div>
 </template>
 <script>
-import TextColorful from '@/views/header/TextColorful'
-import MenuItems from '@/views/header/MenuItems'
+import NavigationText from '@/views/navigation/NavigationText'
+import NavigationMenu from '@/views/navigation/NavigationMenu'
 export default {
-  name: 'Header',
+  name: 'Navigation',
   components: {
-    TextColorful,
-    MenuItems
+    NavigationText,
+    NavigationMenu
   },
   props: {
     showHead: {

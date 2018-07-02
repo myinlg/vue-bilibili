@@ -9,7 +9,7 @@
       </div>
     </el-row>
     <el-row class="home-page">
-      <HomePopularize></HomePopularize>
+      <ContentPopularize></ContentPopularize>
     </el-row>
   </div>
 </template>
@@ -17,13 +17,13 @@
 <script>
 import Shuffling from '@/components/shuffling/Shuffling'
 import ImgModule from '@/components/ImgModule'
-import HomePopularize from './HomePopularize'
+import ContentPopularize from './ContentPopularize'
 export default {
   name: 'Content',
   components: {
     Shuffling,
     ImgModule,
-    HomePopularize
+    ContentPopularize
   },
   data () {
     return {

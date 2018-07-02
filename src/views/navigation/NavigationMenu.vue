@@ -20,7 +20,7 @@
 </template>
 <script>
 export default {
-  name: '',
+  name: 'NavigationMenu',
   data () {
     return {
       menusList: [

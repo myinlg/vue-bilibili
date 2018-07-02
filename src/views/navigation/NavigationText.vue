@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-  name: 'TextColorful',
+  name: 'NavigationText',
   props: {
     title: {
       type: String,

@@ -28,7 +28,7 @@
 import ImgDescript from '@/components/ImgDescript'
 import ImgStorey from '@/components/ImgStorey'
 export default {
-  name: 'HomePopularize',
+  name: 'ContentPopularize',
   components: {
     ImgDescript,
     ImgStorey
