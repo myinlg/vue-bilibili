@@ -1,19 +1,16 @@
 <!--图片轮播组件-->
 <template>
-  <div class="shuffling">
+  <div class="shuffling" @mouseover="mouseOver(true)" @mouseout="mouseOver(false)">
     <el-row class="main">
       <ul class="img-list" ref="shuff">
         <li v-for="(item,index) in imgList" :key="index">
-          <img :src="item.imgUrl">
+          <a href=""> <img :src="item.imgUrl"></a>
         </li>
       </ul>
     </el-row>
     <el-row class="foot">
 				<div class="title" v-if="imgList[count]">
-					<span class="">
-						<!-- <img src="//static.hdslb.com/images/base/ad.png" style="width: 32px; height: 20px: margin-left: 5px;vertical-align: middle;" v-if="bannerlist[count].is_ad"> -->
-						<a href="" target="_blank">{{ imgList[count].descript }}</a>
-					</span>
+          <a href="" target="_blank">{{ imgList[count].descript }}</a>
 				</div>
 				<ul class="slide-bar">
 					<li :class="{on: count == index}" v-for="(item, index) in imgList" :key="index" @click="cutItem(index)"></li>
@@ -27,14 +24,15 @@ export default {
   data () {
     return {
       imgList: [
-        {title: '', descript: '【祖娅纳惜·Fre】谁杀死了知更鸟【和声伴奏2P更新】', imgUrl: '/static/images/content/shuffling0.jpg'},
+        {title: '', descript: '【和声伴奏2P更新】', imgUrl: '/static/images/content/shuffling0.jpg'},
         {title: '', descript: '【祖娅纳惜·Fre】谁杀死了知更鸟【和声伴奏2P更新】', imgUrl: '/static/images/content/shuffling1.jpg'},
         {title: '', descript: '【祖娅纳惜·Fre】谁杀死了知更鸟【和声伴奏2P更新】', imgUrl: '/static/images/content/shuffling2.jpg'},
         {title: '', descript: '【该细还得细】Fate/EXTRA世界线的前世今生(前)', imgUrl: '/static/images/content/shuffling3.jpg'},
         {title: '', descript: '【星火行动】谁杀死了知更鸟【言和】【神华社x踏云社】', imgUrl: '/static/images/content/shuffling5.jpg'},
       ],
       interval:Function,
-      count:0
+      count:0,
+      show:false
     }
   },
   mounted() {
@@ -53,7 +51,7 @@ export default {
 				if (this.$refs.shuff) {
 					this.$refs.shuff.style.marginLeft = left
 				}
-			}, 5000)
+			}, 2000)
     },
     cutItem(index) {
 			this.count = index
@@ -62,8 +60,15 @@ export default {
 			this.$refs.shuff.style.marginLeft = left
 			//点击圆点停止计时 并重新开启
 			clearInterval(this.interval)
-			this.startInterval()
 		},
+    mouseOver(state){
+      this.show = state;
+      if(state){
+        clearInterval(this.interval);
+      } else {
+        this.startInterval();
+      }
+    }
   }
 }
 </script>
@@ -112,12 +117,16 @@ export default {
       top: 0;
       height: 35px;
       line-height: 35px;
-      width: 50%;
+      width: 290px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
       color: #fff;
       font-size: 14px;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
     }
     .slide-bar {
       position: absolute;
@@ -125,6 +134,7 @@ export default {
       bottom: 5px;
       overflow: hidden;
       padding: 2px 5px;
+      margin: 0;
       list-style: none;
       li {
         float: left;
