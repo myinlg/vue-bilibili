@@ -5,7 +5,7 @@
         <Shuffling></Shuffling>
       </div>
       <div class="recommend-module">
-        <ImgModule></ImgModule>
+        <Recommend></Recommend>
       </div>
     </el-row>
     <el-row class="home-page">
@@ -16,13 +16,13 @@
 
 <script>
 import Shuffling from '@/components/shuffling/Shuffling'
-import ImgModule from '@/components/ImgModule'
+import Recommend from '@/components/recommend/Recommend'
 import ContentPopularize from './ContentPopularize'
 export default {
   name: 'Content',
   components: {
     Shuffling,
-    ImgModule,
+    Recommend,
     ContentPopularize
   },
   data () {

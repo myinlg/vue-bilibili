@@ -1,15 +1,26 @@
 <template>
-  <div class="img-module">
-      <div class="img" v-for="(item,index) in imgList" :key="index" :style="{backgroundImage:'url('+item.imgUrl+')'}"></div>
-  </div>
+	<div class="recommend">
+		<ul class="top-list" clearfix>
+			<RecommendItem v-for="(item, index) in imgList" :contentTop="item" :key="index"></RecommendItem>
+		</ul>
+		<div class="prev" @click="now = now > 0 ? now -= 1 : now = 2">{{ this.pre = this.now === 0 ? '昨日' : this.now === 1 ? '三日' : '一周'}}</div>
+    <div class="next" @click="now = now < 2 ? now += 1 : now = 0">{{ this.next = this.now === 0 ? '一周' : this.now === 1 ? '昨日' : '三日'}}</div>
+	</div>
 </template>
 
 <script>
+import RecommendItem from './RecommendItem';
 export default {
-  name: 'ImgModule',
+  name: 'Recommend',
+  components:{
+    RecommendItem
+  },
   data () {
     return {
-       imgList:[
+      now: 0, // 0三日  1
+      pre: '',
+      next: '',
+      imgList:[
         {
           aid:"12853735",
           author:"Orsuan",
@@ -153,19 +164,63 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.img-module {
-  width: 100%;
-  height: 100%;
-  display: flex;
+.recommend {
+  position: relative;
+  height: 240px;
   overflow: hidden;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  .img {
-    width: 160px;
-    height: 100px;
-    background-size: 100% 100%;
-    border-radius: 5px;
-    margin-bottom: 20px;
+  .top-list {
+    margin-right: -20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .prev,
+  .next {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url('http://static.hdslb.com/images/v3images/icons2.png'); // static.hdslb.com/images/v3images/icons2.png)
+    background-repeat: no-repeat;
+    width: 20px;
+    top: 50%;
+    margin-top: -30px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #fff;
+    z-index: 99;
+    text-align: center;
+    line-height: 16px;
+    user-select: none;
+  }
+
+  .prev {
+    left: 0px;
+    border-radius: 0 2px 2px 0;
+    background-position: 6px -1211px;
+    padding: 13px 5px 13px 10px;
+  }
+
+  .next {
+    right: 0px;
+    border-radius: 2px 0 0 2px;
+    background-position: 25px -1262px;
+    padding: 13px 10px 13px 5px;
+  }
+
+  &:hover .prev,
+  &:hover .next {
+    display: block;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }
 </style>
+
