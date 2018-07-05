@@ -128,6 +128,7 @@ export default {
         padding: 0;
         border-radius: 3px;
         box-shadow: 0px 0px 3px #888888;
+        background-color: #fff;
         > li {
           position: relative;
           text-indent: 30px;

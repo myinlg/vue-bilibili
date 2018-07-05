@@ -47,10 +47,12 @@ export default {
   height: 100%;
   top: 0;
   .bg-animate {
+    position: relative;
+    background-position: center -10px;
+    background-repeat: no-repeat;
     height: 150px;
     width: 100%;
     background-image: url(~assets/images/head_logo.png);
-    background-size: 100% 100%;
     > div {
       position: relative;
       height: 100%;

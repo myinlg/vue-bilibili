@@ -30,7 +30,7 @@ export default {
 <style lang="less" scoped>
 .recommend-item {
   float: left;
-  width: 180px;
+  width: 160px;
   margin-bottom: 20px;
 
   .v-item {

@@ -166,14 +166,15 @@ export default {
 <style lang="less" scoped>
 .recommend {
   position: relative;
-  height: 240px;
+  height: 100%;
   overflow: hidden;
+  font-size: 12px;
   .top-list {
-    margin-right: -20px;
+    // margin-right: -20px;
     list-style: none;
     padding: 0;
     margin: 0;
-    height: auto;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
