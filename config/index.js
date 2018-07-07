@@ -15,7 +15,7 @@ module.exports = {
             // changeOrigin: true,
             // pathRewrite: {
             //   '^/api': '/api'
-            // },    // 将请求发送到本地server
+            },    // 将请求发送到本地server
         },
 
         // Various Dev Server settings
