@@ -23,37 +23,16 @@ export default {
   name: 'NavigationMenu',
   data () {
     return {
-      menusList: [
-        { title: '首页',
-          img: 'icon-home',
-          url: 'http://www.baidu.com',
-          children: [
-            { title: 'MAD-AMV', url: '' },
-            { title: 'MMD-3D', url: '' },
-            { title: '短片', url: '' },
-            { title: '手书', url: '' },
-            { title: '配音', url: '' }
-          ]
-        },
-        { title: '动画', img: '', num: '999+', url: 'http://www.baidu.com' },
-        { title: '番剧', img: '', num: '99', url: 'http://www.baidu.com' },
-        { title: '国创', img: '', num: '122', url: 'http://www.baidu.com' },
-        { title: '音乐', img: '', num: '144', url: 'http://www.baidu.com' },
-        { title: '舞蹈', img: '', num: '123', url: 'http://www.baidu.com' },
-        { title: '科技', img: '', num: '123', url: 'http://www.baidu.com' },
-        { title: '生活', img: '', num: '534', url: '' },
-        { title: '鬼畜', img: '', num: '154', url: '' },
-        { title: '时尚', img: '', num: '52', url: '' },
-        { title: '广告', img: '', num: '124', url: '' },
-        { title: '娱乐', img: '', num: '72', url: '' },
-        { title: '影视', img: '', num: '621', url: '' },
-        { title: '放映厅', img: '', num: '213', url: '' },
-        { title: '专栏', img: 'icon-column', url: '' },
-        { title: '广场', img: 'icon-square', url: '' },
-        { title: '直播', img: 'icon-live ', url: '' },
-        { title: '小黑屋', img: 'icon-blackroom', url: '' }
-      ]
+      menusList: []
     }
+  },
+  created(){
+    this.$util.ajax({
+      url:'/api/api/navigation.json'
+      // url:require.resolve('./navigation.json')
+    }).then((res,data)=>{
+      debugger
+    });
   }
 }
 </script>

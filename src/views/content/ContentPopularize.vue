@@ -22,16 +22,21 @@
           <div class="adpos"></div>
         </div>
       </el-row>
+      <el-row class="nav">
+        <NavSide></NavSide>
+      </el-row>
   </div>
 </template>
 <script>
 import ImgDescript from '@/components/ImgDescript'
 import ImgStorey from '@/components/ImgStorey'
+import NavSide from '@/components/navside/NavSide'
 export default {
   name: 'ContentPopularize',
   components: {
     ImgDescript,
-    ImgStorey
+    ImgStorey,
+    NavSide
   },
   data () {
     return {
@@ -113,6 +118,18 @@ export default {
     }
     > .title:before {
       .icon-living;
+    }
+  }
+  //侧边导航
+  .nav {
+    position: fixed;
+    left: 50%;
+    top: 200px;
+    margin-left: 590px;
+  }
+  @media screen and (max-width: 1400px) {
+    .nav {
+      margin-left: 500px;
     }
   }
 }
