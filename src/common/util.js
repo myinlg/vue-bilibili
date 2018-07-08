@@ -22,19 +22,22 @@ export default {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
             }).then(res => {
-                if (res.data.code === 1003) {
-                    window.location.href =
-                        window.location.origin +
-                        '/#/login?redirect=' +
-                        encodeURIComponent(window.location.href);
-                    return;
-                }
-                if (res.data.code === 1000) {
-                    resolve(res.data);
-                } else {
-                    Message.error(res.data.desc);
-                    resolve(res.data);
-                }
+              resolve(res.data);
+                // if (res.data.code === 1003) {
+                //     window.location.href =
+                //         window.location.origin +
+                //         '/#/login?redirect=' +
+                //         encodeURIComponent(window.location.href);
+                //     return;
+                // }
+                // if (res.data.code === 1000) {
+                //     resolve(res.data);
+                // } else {
+                //     Message.error(res.data.desc);
+                //     resolve(res.data);
+                // }
+            }).catch((error)=>{
+              reject(error);
             });
         });
     },

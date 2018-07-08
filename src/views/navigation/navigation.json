@@ -2,6 +2,12 @@
   {
     "title": "首页",
     "img": "icon-home",
+    "url": "http://www.baidu.com"
+  },
+  {
+    "title": "动画",
+    "img": "",
+    "num": "999+",
     "url": "http://www.baidu.com",
     "children": [
       {
@@ -25,12 +31,6 @@
         "url": ""
       }
     ]
-  },
-  {
-    "title": "动画",
-    "img": "",
-    "num": "999+",
-    "url": "http://www.baidu.com"
   },
   {
     "title": "番剧",

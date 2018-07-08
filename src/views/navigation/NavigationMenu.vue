@@ -19,6 +19,7 @@
   </div>
 </template>
 <script>
+import menusList from './navigation.json';
 export default {
   name: 'NavigationMenu',
   data () {
@@ -27,12 +28,32 @@ export default {
     }
   },
   created(){
+    //http://f.apiplus.cn/bj11x5.json
     this.$util.ajax({
-      url:'/api/api/navigation.json'
+      url:'/api/bj11x5.json'
       // url:require.resolve('./navigation.json')
     }).then((res,data)=>{
       debugger
+    }).catch((error)=>{
+      debugger
     });
+    this.$util.ajax({
+      url:'/api/ding.json'
+      // url:require.resolve('./navigation.json')
+    }).then((res,data)=>{
+      debugger
+    }).catch((error)=>{
+      debugger
+    });
+      this.$util.ajax({
+      url:'/b2c-marketing/api/activity/getHeadPageData?channelCode=head_page_4&_t=1531039873422'
+      // url:require.resolve('./navigation.json')
+    }).then((res,data)=>{
+      debugger
+    }).catch((error)=>{
+      debugger
+    });
+    this.menusList = menusList;
   }
 }
 </script>
